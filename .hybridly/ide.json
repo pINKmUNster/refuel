@@ -1,0 +1,39 @@
+{
+  "$schema": "https://laravel-ide.com/schema/laravel-ide-v2.json",
+  "completions": [
+    {
+      "complete": "staticStrings",
+      "options": {
+        "strings": [
+          "index"
+        ]
+      },
+      "condition": [
+        {
+          "functionNames": [
+            "hybridly"
+          ],
+          "parameters": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "complete": "routeName",
+      "condition": [
+        {
+          "classFqn": [
+            "Hybridly\\Hybridly"
+          ],
+          "methodNames": [
+            "base"
+          ],
+          "parameters": [
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
 useHead({
-    title: () => `Coucou profile`
+    title: () => `Dashboard Refuel`
 })
 </script>
 
 <template>
     <div>
-        Hello Hybridly
+        <h1 class="xl">Refuel</h1>
     </div>
 </template>

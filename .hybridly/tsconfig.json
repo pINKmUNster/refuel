@@ -33,7 +33,7 @@
     }
   },
   "include": [
-    "../resources/views/index.vue",
+    "../src/Modules/Homepage/Web/views/index.vue",
     "../resources/**/*",
     "../app/**/*",
     "../src/**/*",

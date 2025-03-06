@@ -1,5 +1,8 @@
 <?php
 
 return [
-    App\Providers\AppServiceProvider::class,
+    Infrastructure\AppServiceProvider::class,
+
+    // modules
+    Module\Homepage\HomepageServiceProvider::class,
 ];

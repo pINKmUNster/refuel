@@ -5,7 +5,8 @@
       "complete": "staticStrings",
       "options": {
         "strings": [
-          "homepage::index"
+          "homepage::index",
+          "vehicle::index"
         ]
       },
       "condition": [

@@ -3,12 +3,11 @@
 namespace Module\User;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Module\Car\Vehicle;
+use Module\Vehicle\Vehicle;
 
 
 class User extends Authenticatable

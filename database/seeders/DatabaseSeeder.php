@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Module\Car\Brand;
-use Module\Car\Vehicle;
+use Illuminate\Database\Seeder;
 use Module\User\User;
+use Module\Vehicle\Brand;
+use Module\Vehicle\Vehicle;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {

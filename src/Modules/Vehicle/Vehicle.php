@@ -1,13 +1,13 @@
 <?php
 
-namespace Module\Car;
+namespace Module\Vehicle;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Module\Car\Factories\VehicleFactory;
 use Module\User\User;
+use Module\Vehicle\Factories\VehicleFactory;
 
 final class Vehicle extends Model
 {
@@ -16,7 +16,7 @@ final class Vehicle extends Model
     protected $table = 'vehicles';
     protected $casts = [
         'fuel_type' => FuelType::class,
-        'vehicle_type' => VehicleType::class,
+        'type' => VehicleType::class,
     ];
 
     public function brand(): BelongsTo

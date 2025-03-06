@@ -34,6 +34,7 @@
   },
   "include": [
     "../src/Modules/Homepage/Web/views/index.vue",
+    "../src/Modules/Vehicle/Web/views/index.vue",
     "../resources/**/*",
     "../app/**/*",
     "../src/**/*",

@@ -1,14 +1,14 @@
 <?php
 
-namespace Module\Car\Factories;
+namespace Module\Vehicle\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
-use Module\Car\Brand;
-use Module\Car\FuelType;
-use Module\Car\Vehicle;
-use Module\Car\VehicleType;
 use Module\User\User;
+use Module\Vehicle\Brand;
+use Module\Vehicle\FuelType;
+use Module\Vehicle\Vehicle;
+use Module\Vehicle\VehicleType;
 
 
 final class VehicleFactory extends Factory

@@ -1,12 +1,12 @@
 <?php
 
-namespace Module\Car;
+namespace Module\Vehicle;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Module\Car\Factories\BrandFactory;
+use Module\Vehicle\Factories\BrandFactory;
 
 class Brand extends Model
 {

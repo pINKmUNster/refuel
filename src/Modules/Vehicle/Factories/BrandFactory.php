@@ -1,10 +1,10 @@
 <?php
 
-namespace Module\Car\Factories;
+namespace Module\Vehicle\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
-use Module\Car\Brand;
+use Module\Vehicle\Brand;
 
 final class BrandFactory extends Factory
 {

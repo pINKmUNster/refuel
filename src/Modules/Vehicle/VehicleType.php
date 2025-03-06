@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\Car;
+namespace Module\Vehicle;
 
 enum VehicleType: string
 {

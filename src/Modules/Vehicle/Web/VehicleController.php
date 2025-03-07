@@ -3,6 +3,7 @@
 namespace Module\Vehicle\Web;
 
 use Hybridly\Contracts\HybridResponse;
+use Illuminate\Http\RedirectResponse;
 use Module\Vehicle\Vehicle;
 use Module\Vehicle\VehicleData;
 use function Hybridly\view;
@@ -35,5 +36,12 @@ final class VehicleController
     public function create(): HybridResponse
     {
         return view('vehicle::create');
+    }
+
+    public function destroy(int $id): RedirectResponse
+    {
+        Vehicle::findOrFail($id)->delete();
+
+        return redirect()->route('vehicle.index');
     }
 }

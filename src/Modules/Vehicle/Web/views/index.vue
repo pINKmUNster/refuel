@@ -8,6 +8,17 @@ useHead({
 defineProps<{
     vehicles: Module.Vehicle.VehicleData
 }>()
+const showVehicle = (id: number) => {
+    const myRoute = route('vehicle.show', {id: id});
+    router.get(myRoute);
+}
+
+const deleteVehicle = (id: number) => {
+    const myRoute = route('vehicle.destroy', {id: id});
+    router.delete(myRoute);
+}
+
+
 </script>
 
 <template layout>
@@ -18,6 +29,8 @@ defineProps<{
                 v-for="vehicle in vehicles"
                 :key="vehicle.id"
                 :vehicle="vehicle"
+                @showVehicle="showVehicle"
+                @deleteVehicle="deleteVehicle"
             />
         </div>
     </div>

@@ -40,6 +40,8 @@
     "../resources/layouts/default.vue",
     "../resources/components/nav-link.vue",
     "../resources/components/nav.vue",
+    "../resources/components/primary-button.vue",
+    "../resources/components/secondary-button.vue",
     "../resources/**/*",
     "../app/**/*",
     "../src/**/*",

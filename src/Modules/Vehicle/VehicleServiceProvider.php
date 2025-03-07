@@ -22,5 +22,6 @@ final class VehicleServiceProvider extends ServiceProvider
         $router->get('/vehicle', [VehicleController::class, 'index'])->name('index');
         $router->get('/vehicle/{id}', [VehicleController::class, 'show'])->name('show');
         $router->get('/vehicle/create', [VehicleController::class, 'create'])->name('create');
+        $router->delete('/vehicle/{id}', [VehicleController::class, 'destroy'])->name('destroy');
     }
 }

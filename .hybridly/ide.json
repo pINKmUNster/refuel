@@ -6,7 +6,9 @@
       "options": {
         "strings": [
           "homepage::index",
-          "vehicle::index"
+          "vehicle::create",
+          "vehicle::index",
+          "vehicle::show"
         ]
       },
       "condition": [

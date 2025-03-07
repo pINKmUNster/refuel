@@ -7,7 +7,7 @@
 		declare module 'hybridly' {
 			export interface GlobalRouteCollection {
 				url: 'https://refuel.test'
-				routes: {"hybridly.action.invoke":{"uri":"invoke","wheres":[],"bindings":{}},"homepage.index":{"wheres":[],"bindings":{}},"vehicle.index":{"uri":"vehicle","wheres":[],"bindings":{}}}
+				routes: {"hybridly.action.invoke":{"uri":"invoke","wheres":[],"bindings":{}},"homepage.index":{"wheres":[],"bindings":{}},"vehicle.index":{"uri":"vehicle","wheres":[],"bindings":{}},"vehicle.show":{"uri":"vehicle/{id}","wheres":[],"bindings":{}}}
 			}
 		}
 		

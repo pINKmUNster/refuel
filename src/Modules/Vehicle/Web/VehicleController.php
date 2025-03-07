@@ -20,4 +20,20 @@ final class VehicleController
                 'vehicles' => $vehicles
             ]);
     }
+
+    public function show(int $id): HybridResponse
+    {
+        $vehicle = Vehicle::with('brand')
+            ->findOrFail($id);
+
+        return view('vehicle::show',
+            [
+                'vehicle' => VehicleData::fromModel($vehicle)
+            ]);
+    }
+
+    public function create(): HybridResponse
+    {
+        return view('vehicle::create');
+    }
 }

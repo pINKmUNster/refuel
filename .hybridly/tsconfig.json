@@ -34,7 +34,9 @@
   },
   "include": [
     "../src/Modules/Homepage/Web/views/index.vue",
+    "../src/Modules/Vehicle/Web/views/create.vue",
     "../src/Modules/Vehicle/Web/views/index.vue",
+    "../src/Modules/Vehicle/Web/views/show.vue",
     "../resources/layouts/default.vue",
     "../resources/components/nav-link.vue",
     "../resources/components/nav.vue",

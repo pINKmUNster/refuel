@@ -10,9 +10,12 @@ class VehicleData extends Data
         public readonly int $id,
         public readonly string $vin,
         public readonly string $licencePlate,
-        public readonly FuelType $fuelType,
-        public readonly VehicleType $type,
-        public readonly string $brand
+        #[RecordTypeScriptType(FuelType::class, 'string')]
+        public readonly string $fuelType,
+        #[RecordTypeScriptType(VehicleType::class, 'string')]
+        public readonly string $type,
+        public readonly string $brand,
+        public readonly string $owner,
     ) {
     }
 
@@ -22,10 +25,11 @@ class VehicleData extends Data
             id: $vehicle->id,
             vin: $vehicle->vin,
             licencePlate: $vehicle->licencePlate,
-            fuelType: $vehicle->fuel_type,
-            type: $vehicle->type,
-            brand: 'audi'
-//            brand: $vehicle->brand()->label,
+            fuelType: $vehicle->fuel_type->getDisplayName(),
+            type: $vehicle->type->getDisplayName(),
+//            brand: 'audi'
+            brand: $vehicle->brand->label,
+            owner: $vehicle->user->name,
         );
     }
 }

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Nav from '@/components/nav.vue'
-
 useHead({
     title: 'Refuel'
 })

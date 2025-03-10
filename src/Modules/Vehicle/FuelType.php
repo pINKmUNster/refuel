@@ -8,7 +8,6 @@ enum FuelType: string
     case GASOLINE = 'gasoline';
     case DIESEL = 'diesel';
 
-
     public function getDisplayName(): string
     {
         return match ($this) {

@@ -19,7 +19,7 @@ final class VehicleFactory extends Factory
     {
         return [
             'vin' => $this->faker->ean8(),
-            'licencePlate' => $this->faker->word(),
+            'licence_plate' => $this->faker->word(),
             'fuel_type' => $this->faker->randomelement(FuelType::cases()),
             'brand_id' => Brand::factory(),
             'type' => $this->faker->randomElement(VehicleType::cases()),

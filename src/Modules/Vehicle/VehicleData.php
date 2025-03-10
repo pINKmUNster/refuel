@@ -9,7 +9,7 @@ class VehicleData extends Data
     public function __construct(
         public readonly int $id,
         public readonly string $vin,
-        public readonly string $licencePlate,
+        public readonly string $licence_plate,
         #[RecordTypeScriptType(FuelType::class, 'string')]
         public readonly string $fuelType,
         #[RecordTypeScriptType(VehicleType::class, 'string')]
@@ -24,7 +24,7 @@ class VehicleData extends Data
         return new self(
             id: $vehicle->id,
             vin: $vehicle->vin,
-            licencePlate: $vehicle->licencePlate,
+            licence_plate: $vehicle->licence_plate,
             fuelType: $vehicle->fuel_type->getDisplayName(),
             type: $vehicle->type->getDisplayName(),
 //            brand: 'audi'

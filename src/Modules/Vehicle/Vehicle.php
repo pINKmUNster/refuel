@@ -11,6 +11,15 @@ use Module\Vehicle\Factories\VehicleFactory;
 
 final class Vehicle extends Model
 {
+    protected $fillable = [
+        'fuel_type',
+        'type',
+        'brand_id',
+        'user_id',
+        'vin',
+        'licence_plate'
+    ];
+
     use HasFactory, SoftDeletes;
 
     protected $table = 'vehicles';

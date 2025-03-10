@@ -20,8 +20,8 @@ final class VehicleServiceProvider extends ServiceProvider
     public function routes(Router $router): void
     {
         $router->get('/vehicle', [VehicleController::class, 'index'])->name('index');
-        $router->get('/vehicle/{id}', [VehicleController::class, 'show'])->name('show');
         $router->get('/vehicle/create', [VehicleController::class, 'create'])->name('create');
+        $router->get('/vehicle/{id}', [VehicleController::class, 'show'])->name('show');
         $router->delete('/vehicle/{id}', [VehicleController::class, 'destroy'])->name('destroy');
     }
 }

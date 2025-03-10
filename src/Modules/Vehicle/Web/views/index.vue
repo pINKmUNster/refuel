@@ -6,7 +6,7 @@ useHead({
 })
 
 defineProps<{
-    vehicles: Module.Vehicle.VehicleData
+    vehicles: Module.Vehicle.VehicleData[]
 }>()
 const showVehicle = (id: number) => {
     const myRoute = route('vehicle.show', {id: id});
@@ -23,7 +23,13 @@ const deleteVehicle = (id: number) => {
 
 <template layout>
     <div class="vehicles">
-        <h1 class="text-3xl">Vehicles</h1>
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl">Vehicles</h1>
+            <primary-button
+                @click="() => router.navigate({url:route('vehicle.create')})"
+            >Add new vehicle
+            </primary-button>
+        </div>
         <div class="grid grid-cols-3 gap-4 mt-4">
             <vehicle-card
                 v-for="vehicle in vehicles"

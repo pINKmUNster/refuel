@@ -4,9 +4,9 @@ namespace Module\Vehicle\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
+use Module\Fuel\FuelType;
 use Module\User\User;
 use Module\Vehicle\Brand;
-use Module\Vehicle\FuelType;
 use Module\Vehicle\Vehicle;
 use Module\Vehicle\VehicleType;
 

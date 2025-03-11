@@ -2,7 +2,7 @@
 
 namespace Module\Vehicle\Web;
 
-use Module\Vehicle\FuelType;
+use Module\Fuel\FuelType;
 use Module\Vehicle\VehicleType;
 use Spatie\LaravelData\Data;
 

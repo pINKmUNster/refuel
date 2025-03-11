@@ -2,6 +2,7 @@
 
 namespace Module\Vehicle;
 
+use Module\Fuel\FuelType;
 use Spatie\LaravelData\Data;
 
 class VehicleData extends Data

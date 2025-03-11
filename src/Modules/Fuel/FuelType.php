@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\Vehicle;
+namespace Module\Fuel;
 
 enum FuelType: string
 {

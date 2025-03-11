@@ -22,7 +22,7 @@ final class StoreVehicleRequestData extends Data
     {
         return [
             "vin" => ["required", "string", "max:17"],
-            "licencePlate" => ["required", "string", "max:10"],
+            "licence_plate" => ["required", "string", "max:10"],
 //            "fuel_type" => ["required", "string", "in:gasoline,diesel,electric"],
 //            "type" => ["required", "string", "in:car,motorcycle,boat"],
 //            "user_id" => ["required", "integer", "exists:users,id"],

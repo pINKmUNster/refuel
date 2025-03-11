@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import {SelectOption} from "@/components/my-select.vue";
 import {RadioOption} from "@/components/my-radio.vue";
 
@@ -20,7 +21,7 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
         brand_id: 0,
         fuel_type: 'gasoline',
         vin: "",
-        licencePlate: "",
+        licence_plate: "",
         user_id: 0,
     }
 });

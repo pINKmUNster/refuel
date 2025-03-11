@@ -7,10 +7,10 @@ useHead({
     title: () => `New vehicle`
 });
 
-let props = defineProps<{
+const props = defineProps<{
     brands: Module.Vehicle.BrandData[];
     users: Module.User.UserNameData[];
-}>()
+}>();
 
 const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
     method: "POST",
@@ -26,27 +26,24 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
     }
 });
 
-let typeSelectOptions: Array<SelectOption> = [
+const typeSelectOptions: Array<SelectOption> = [
     {value: "car", label: "Car"},
     {value: "motorcycle", label: "Motorcycle"},
     {value: "truck", label: "Truck"},
     {value: "bus", label: "Bus"},
     {value: "van", label: "Van"},
     {value: "suv", label: "SUV"},
-    {value: "other", label: "Other"},
 ];
 
-let brandSelectOptions: Array<SelectOption> = props.brands.map(brand => {
+const brandSelectOptions: Array<SelectOption> = props.brands.map(brand => {
     return {value: brand.id, label: brand.label};
 });
 
-let userSelectOptions: Array<SelectOption> = props.users.map(
-    user => {
+ const userSelectOptions: Array<SelectOption> = props.users.map(user => {
         return {value: user.id, label: user.name};
-    }
-)
+    });
 
-let radioOptions: Array<RadioOption> = [
+const radioOptions: Array<RadioOption> = [
     {value: "electric", label: "Electric"},
     {value: "gasoline", label: "Gasoline"},
     {value: "diesel", label: "Diesel"},

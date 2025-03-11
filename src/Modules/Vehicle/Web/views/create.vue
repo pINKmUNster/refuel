@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import {SelectOption} from "@/components/my-select.vue";
+import {RadioOption} from "@/components/my-radio.vue";
+
 useHead({
     title: () => `New vehicle`
 });
 
-defineProps<{
-    brands : Module.Vehicle.BrandData[];
-    users : Module.User.UserNameData[];
+let props = defineProps<{
+    brands: Module.Vehicle.BrandData[];
+    users: Module.User.UserNameData[];
 }>()
 
 const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
@@ -21,6 +24,33 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
         user_id: 0,
     }
 });
+
+let typeSelectOptions: Array<SelectOption> = [
+    {value: "car", label: "Car"},
+    {value: "motorcycle", label: "Motorcycle"},
+    {value: "truck", label: "Truck"},
+    {value: "bus", label: "Bus"},
+    {value: "van", label: "Van"},
+    {value: "suv", label: "SUV"},
+    {value: "other", label: "Other"},
+];
+
+let brandSelectOptions: Array<SelectOption> = props.brands.map(brand => {
+    return {value: brand.id, label: brand.label};
+});
+
+let userSelectOptions: Array<SelectOption> = props.users.map(
+    user => {
+        return {value: user.id, label: user.name};
+    }
+)
+
+let radioOptions: Array<RadioOption> = [
+    {value: "electric", label: "Electric"},
+    {value: "gasoline", label: "Gasoline"},
+    {value: "diesel", label: "Diesel"},
+];
+
 </script>
 
 <template layout>
@@ -28,43 +58,46 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
     <form @submit.prevent="vehicleForm.submit" class="mt-4">
         <div class="grid grid-cols-2 gap-4">
             <div>
-                <label for="type">Type</label>
-                <select name="type" id="type" v-model="vehicleForm.fields.type" class="w-full border rounded">
-                    <option selected>Choose a type</option>
-                    <option value="car">Car</option>
-                    <option value="motorcycle">Motorcycle</option>
-                    <option value="truck">Truck</option>
-                    <option value="bus">Bus</option>
-                    <option value="van">Van</option>
-                    <option value="suv">SUV</option>
-                    <option value="other">Other</option>
-                </select>
-                <span v-if="vehicleForm.errors.type" v-text="vehicleForm.errors.type"/>
+                <my-select
+                    v-model="vehicleForm.fields.type"
+                    :select-options="typeSelectOptions"
+                    label="Type"
+                    name="type"
+                >
+                    <template #option>
+                        <option selected>Choose a type</option>
+                    </template>
+                    <template #errors>
+                        <span v-if="vehicleForm.errors.type" v-text="vehicleForm.errors.type"/>
+                    </template>
+                </my-select>
             </div>
             <div>
-                <label for="brand_id">Brand</label>
-                <select  id="brand_id" v-model="vehicleForm.fields.brand_id" class="w-full border rounded">
-                    <option selected>Choose a brand</option>
-                    <option v-for="brand in brands" :value="brand.id" v-text="brand.label"/>
-                </select>
+                <my-select
+                    v-model="vehicleForm.fields.brand_id"
+                    :select-options="brandSelectOptions"
+                    label="Brand"
+                    name="brand_id"
+                >
+                    <template #option>
+                        <option selected>Choose a brand</option>
+                    </template>
+                    <template #errors>
+                        <span v-if="vehicleForm.errors.brand_id" v-text="vehicleForm.errors.brand_id"/>
+                    </template>
+                </my-select>
             </div>
             <div>
-                <label for="fuel_type">Fuel type</label>
-                <div>
-                    <div class="flex space-x-4">
-                        <input v-model="vehicleForm.fields.fuel_type" type="radio" id="fuel_type-1" value="electric"/>
-                        <label for="fuel_type-1">Electric</label>
-                    </div>
-                    <div class="flex space-x-4">
-                        <input v-model="vehicleForm.fields.fuel_type" type="radio" id="fuel_type-2" value="gasoline"/>
-                        <label for="fuel_type-2">Gasoline</label>
-                    </div>
-                    <div class="flex space-x-4">
-                        <input v-model="vehicleForm.fields.fuel_type" type="radio" id="fuel_type-3" value="diesel"/>
-                        <label for="fuel_type-3">Diesel</label>
-                    </div>
-                </div>
-                <span v-if="vehicleForm.errors.fuel_type" v-text="vehicleForm.errors.fuel_type"/>
+                <my-radio
+                    v-model="vehicleForm.fields.fuel_type"
+                    :radio-options="radioOptions"
+                    label="Fuel type"
+                    name="fuel_type"
+                >
+                    <template #errors>
+                        <span v-if="vehicleForm.errors.fuel_type" v-text="vehicleForm.errors.fuel_type"/>
+                    </template>
+                </my-radio>
             </div>
             <div>
                 <label for="vin">VIN</label>
@@ -72,17 +105,25 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
                 <span v-if="vehicleForm.errors.vin" v-text="vehicleForm.errors.vin"/>
             </div>
             <div>
-                <label for="licencePlate">Licence plate</label>
-                <input v-model="vehicleForm.fields.licence_plate" type="text" id="licencePlate" name="licencePlate"
+                <label for="licence_plate">Licence plate</label>
+                <input v-model="vehicleForm.fields.licence_plate" type="text" id="licence_plate" name="licence_plate"
                        class="w-full border rounded">
                 <span v-if="vehicleForm.errors.licence_plate" v-text="vehicleForm.errors.licence_plate"/>
             </div>
             <div>
-                <label for="user_id">User</label>
-                <select name="user_id" id="user_id" v-model="vehicleForm.fields.user_id" class="w-full border rounded">
-                    <option selected>Choose a user</option>
-                    <option v-for="user in users" :value="user.id" v-text="user.name"/>
-                </select>
+                <my-select
+                    v-model="vehicleForm.fields.user_id"
+                    :select-options="userSelectOptions"
+                    label="User"
+                    name="user_id"
+                >
+                    <template #option>
+                        <option selected>Choose a user</option>
+                    </template>
+                    <template #errors>
+                        <span v-if="vehicleForm.errors.user_id" v-text="vehicleForm.errors.user_id"/>
+                    </template>
+                </my-select>
             </div>
         </div>
         <div class="flex justify-end mt-4 space-x-4">

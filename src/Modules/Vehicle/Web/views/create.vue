@@ -57,7 +57,6 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
                     </div>
                     <div class="flex space-x-4">
                         <input v-model="vehicleForm.fields.fuel_type" type="radio" id="fuel_type-2" value="gasoline"/>
-
                         <label for="fuel_type-2">Gasoline</label>
                     </div>
                     <div class="flex space-x-4">

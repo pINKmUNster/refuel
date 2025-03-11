@@ -13,6 +13,8 @@ return new class extends Migration {
             $table->string('licence_plate');
             $table->string('fuel_type');
             $table->string('type');
+            $table->integer('year');
+            $table->integer('mileage');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('brand_id')->constrained('brands');
             $table->timestamps();

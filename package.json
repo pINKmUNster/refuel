@@ -17,6 +17,7 @@
         "vue": "^3.5.13"
     },
     "dependencies": {
+        "@internationalized/number": "^3.6.0",
         "@vueuse/core": "^12.8.2",
         "reka-ui": "^2.0.2"
     }

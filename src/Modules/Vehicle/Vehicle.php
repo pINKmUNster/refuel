@@ -17,7 +17,9 @@ final class Vehicle extends Model
         'brand_id',
         'user_id',
         'vin',
-        'licence_plate'
+        'licence_plate',
+        'year',
+        'mileage',
     ];
 
     use HasFactory, SoftDeletes;

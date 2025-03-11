@@ -20,6 +20,14 @@ defineProps<{
             <p> {{ vehicle.type }}</p>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-4">
+            <label class="font-bold">Mileage:</label>
+            <p> {{ vehicle.mileage.toLocaleString() }} kms</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-4">
+            <label class="font-bold">Year:</label>
+            <p>{{ vehicle.year }}</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-4">
             <label class="font-bold">Fuel type:</label>
             <p> {{ vehicle.fuelType }}</p>
         </div>

@@ -15,9 +15,8 @@ const emit = defineEmits<{
 <template>
     <div class="border-1 border-gray-200 p-4 rounded-lg">
         <h2 class="font-bold uppercase">{{ vehicle.licence_plate }}</h2>
-        <p>{{ vehicle.vin }}</p>
-        <p>{{ vehicle.brand }}</p>
-        <p>{{ vehicle.type }}</p>
+        <p>{{ vehicle.type }} - {{ vehicle.brand }}</p>
+        <p>{{ vehicle.mileage.toLocaleString() }} kms</p>
         <p>{{ vehicle.fuelType }}</p>
         <p>{{ vehicle.owner }}</p>
 

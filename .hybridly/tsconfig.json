@@ -38,6 +38,8 @@
     "../src/Modules/Vehicle/Web/views/index.vue",
     "../src/Modules/Vehicle/Web/views/show.vue",
     "../resources/layouts/default.vue",
+    "../resources/components/my-radio.vue",
+    "../resources/components/my-select.vue",
     "../resources/components/nav-link.vue",
     "../resources/components/nav.vue",
     "../resources/components/primary-button.vue",

@@ -23,6 +23,8 @@ const vehicleForm = useForm<Module.Vehicle.Web.StoreVehicleRequestData>({
         vin: "",
         licence_plate: "",
         user_id: 0,
+        mileage: 50000,
+        year: 1990
     }
 });
 
@@ -39,9 +41,9 @@ const brandSelectOptions: Array<SelectOption> = props.brands.map(brand => {
     return {value: brand.id, label: brand.label};
 });
 
- const userSelectOptions: Array<SelectOption> = props.users.map(user => {
-        return {value: user.id, label: user.name};
-    });
+const userSelectOptions: Array<SelectOption> = props.users.map(user => {
+    return {value: user.id, label: user.name};
+});
 
 const radioOptions: Array<RadioOption> = [
     {value: "electric", label: "Electric"},
@@ -107,6 +109,19 @@ const radioOptions: Array<RadioOption> = [
                 <input v-model="vehicleForm.fields.licence_plate" type="text" id="licence_plate" name="licence_plate"
                        class="w-full border rounded">
                 <span v-if="vehicleForm.errors.licence_plate" v-text="vehicleForm.errors.licence_plate"/>
+            </div>
+            <div>
+                <label for="mileage">Mileage</label>
+                <input type="number" id="mileage" name="mileage" class="w-full border rounded"
+                       v-model="vehicleForm.fields.mileage">
+                <span v-if="vehicleForm.errors.mileage" v-text="vehicleForm.errors.mileage"/>
+            </div>
+            <div>
+                <label for="year">Year</label>
+                <input type="number" id="year" name="year" class="w-full border rounded" v-model="vehicleForm.fields.year"
+                    min="1900" max="2048"
+                >
+                <span v-if="vehicleForm.errors.year" v-text="vehicleForm.errors.year"/>
             </div>
             <div>
                 <my-select

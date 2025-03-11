@@ -13,6 +13,8 @@ final class StoreVehicleRequestData extends Data
         public string $licence_plate,
         public FuelType $fuel_type,
         public VehicleType $type,
+        public int $year,
+        public int $mileage,
         public int $user_id,
         public int $brand_id,
     ) {
@@ -23,6 +25,7 @@ final class StoreVehicleRequestData extends Data
         return [
             "vin" => ["required", "string", "max:17"],
             "licence_plate" => ["required", "string", "max:10"],
+            "year" => ["required", "integer", "min:1900", "max:" . date("Y")],
 //            "fuel_type" => ["required", "string", "in:gasoline,diesel,electric"],
 //            "type" => ["required", "string", "in:car,motorcycle,boat"],
 //            "user_id" => ["required", "integer", "exists:users,id"],

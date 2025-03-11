@@ -14,6 +14,8 @@ class VehicleData extends Data
         public readonly string $fuelType,
         #[RecordTypeScriptType(VehicleType::class, 'string')]
         public readonly string $type,
+        public readonly int $year,
+        public readonly int $mileage,
         public readonly string $brand,
         public readonly string $owner,
     ) {
@@ -27,7 +29,8 @@ class VehicleData extends Data
             licence_plate: $vehicle->licence_plate,
             fuelType: $vehicle->fuel_type->getDisplayName(),
             type: $vehicle->type->getDisplayName(),
-//            brand: 'audi'
+            year: $vehicle->year,
+            mileage: $vehicle->mileage,
             brand: $vehicle->brand->label,
             owner: $vehicle->user->name,
         );

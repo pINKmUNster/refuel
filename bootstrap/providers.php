@@ -6,4 +6,5 @@ return [
     // modules
     Module\Homepage\HomepageServiceProvider::class,
     Module\Vehicle\VehicleServiceProvider::class,
+    Module\Fuel\FuelServiceProvider::class
 ];

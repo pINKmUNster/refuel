@@ -21,5 +21,6 @@ final class FuelServiceProvider extends ServiceProvider
     public function routes(Router $router): void
     {
         $router->get('/fuel-price', [FuelPriceController::class, 'index'])->name('index');
+        $router->post('/refresh-fuel-price', [FuelPriceController::class, 'refresh'])->name('refresh');
     }
 }

@@ -8,7 +8,8 @@
           "homepage::index",
           "vehicle::create",
           "vehicle::index",
-          "vehicle::show"
+          "vehicle::show",
+          "fuel::index"
         ]
       },
       "condition": [

@@ -2,7 +2,10 @@
 
 namespace Module\Fuel;
 
-enum FuelType: string
+use Spatie\TypeScriptTransformer\Attributes\TypeScript;
+
+#[TypeScript]
+enum FuelTypeEnum: string
 {
     case ELECTRIC = 'electric';
     case GASOLINE = 'gasoline';

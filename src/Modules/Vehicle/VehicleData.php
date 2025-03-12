@@ -2,7 +2,7 @@
 
 namespace Module\Vehicle;
 
-use Module\Fuel\FuelType;
+use Module\Fuel\FuelTypeEnum;
 use Spatie\LaravelData\Data;
 
 class VehicleData extends Data
@@ -11,7 +11,7 @@ class VehicleData extends Data
         public readonly int $id,
         public readonly string $vin,
         public readonly string $licence_plate,
-        #[RecordTypeScriptType(FuelType::class, 'string')]
+        #[RecordTypeScriptType(FuelTypeEnum::class, 'string')]
         public readonly string $fuelType,
         #[RecordTypeScriptType(VehicleType::class, 'string')]
         public readonly string $type,

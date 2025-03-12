@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Module\Fuel\FuelType;
+use Module\Fuel\FuelTypeEnum;
 use Module\User\User;
 use Module\Vehicle\Factories\VehicleFactory;
 
@@ -27,7 +27,7 @@ final class Vehicle extends Model
 
     protected $table = 'vehicles';
     protected $casts = [
-        'fuel_type' => FuelType::class,
+        'fuel_type' => FuelTypeEnum::class,
         'type' => VehicleType::class,
     ];
 

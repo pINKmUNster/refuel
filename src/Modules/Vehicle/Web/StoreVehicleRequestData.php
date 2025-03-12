@@ -2,7 +2,7 @@
 
 namespace Module\Vehicle\Web;
 
-use Module\Fuel\FuelType;
+use Module\Fuel\FuelTypeEnum;
 use Module\Vehicle\VehicleType;
 use Spatie\LaravelData\Data;
 
@@ -11,7 +11,7 @@ final class StoreVehicleRequestData extends Data
     public function __construct(
         public string $vin,
         public string $licence_plate,
-        public FuelType $fuel_type,
+        public FuelTypeEnum $fuel_type,
         public VehicleType $type,
         public int $year,
         public int $mileage,

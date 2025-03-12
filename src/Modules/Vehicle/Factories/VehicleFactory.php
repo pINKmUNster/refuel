@@ -4,7 +4,7 @@ namespace Module\Vehicle\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
-use Module\Fuel\FuelType;
+use Module\Fuel\FuelTypeEnum;
 use Module\User\User;
 use Module\Vehicle\Brand;
 use Module\Vehicle\Vehicle;
@@ -20,7 +20,7 @@ final class VehicleFactory extends Factory
         return [
             'vin' => $this->faker->ean8(),
             'licence_plate' => $this->faker->word(),
-            'fuel_type' => $this->faker->randomelement(FuelType::cases()),
+            'fuel_type' => $this->faker->randomelement(FuelTypeEnum::cases()),
             'type' => $this->faker->randomElement(VehicleType::cases()),
             'year' => $this->faker->year(),
             'mileage' => $this->faker->numberBetween(0, 100000),

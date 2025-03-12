@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('fuel_type');
             $table->decimal('price');
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ final class FuelPriceFactory extends Factory
         return [
             'price' => $this->faker->randomFloat(2, 0, 10),
             'fuel_type' => $this->faker->randomElement(FuelTypeEnum::cases()),
+            'date' => $this->faker->date(),
             'created_at' => Carbon::now(),
         ];
     }

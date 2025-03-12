@@ -6,10 +6,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 use Module\Fuel\FuelTypeEnum;
 use Module\Fuel\Models\FuelPrice;
-use Module\User\User;
-use Module\Vehicle\Brand;
-use Module\Vehicle\Vehicle;
-use Module\Vehicle\VehicleType;
 
 
 final class FuelPriceFactory extends Factory

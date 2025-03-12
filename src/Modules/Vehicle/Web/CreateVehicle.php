@@ -2,7 +2,7 @@
 
 namespace Module\Vehicle\Web;
 
-use Module\Vehicle\Vehicle;
+use Module\Vehicle\Model\Vehicle;
 
 final class CreateVehicle
 {

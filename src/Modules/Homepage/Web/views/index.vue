@@ -7,6 +7,6 @@ useHead({
 
 <template layout>
     <div>
-        <h1 class="xl">Refuel</h1>
+        <h1 class="text-4xl">Refuel</h1>
     </div>
 </template>

@@ -4,7 +4,7 @@ namespace Module\Vehicle\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
-use Module\Vehicle\Brand;
+use Module\Vehicle\Model\Brand;
 
 final class BrandFactory extends Factory
 {

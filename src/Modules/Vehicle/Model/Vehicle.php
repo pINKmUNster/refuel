@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\Vehicle;
+namespace Module\Vehicle\Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Module\Fuel\FuelTypeEnum;
 use Module\User\User;
 use Module\Vehicle\Factories\VehicleFactory;
+use Module\Vehicle\VehicleTypeEnum;
 
 final class Vehicle extends Model
 {
@@ -28,7 +29,7 @@ final class Vehicle extends Model
     protected $table = 'vehicles';
     protected $casts = [
         'fuel_type' => FuelTypeEnum::class,
-        'type' => VehicleType::class,
+        'type' => VehicleTypeEnum::class,
     ];
 
     public function brand(): BelongsTo

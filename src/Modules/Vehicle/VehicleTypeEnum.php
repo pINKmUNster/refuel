@@ -2,7 +2,7 @@
 
 namespace Module\Vehicle;
 
-enum VehicleType: string
+enum VehicleTypeEnum: string
 {
     case CAR = 'car';
     case MOTORCYCLE = 'motorcycle';

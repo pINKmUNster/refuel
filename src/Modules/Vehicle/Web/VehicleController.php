@@ -6,10 +6,8 @@ use Hybridly\Contracts\HybridResponse;
 use Illuminate\Http\RedirectResponse;
 use Module\User\User;
 use Module\User\UserNameData;
-use Module\Vehicle\Brand;
-use Module\Vehicle\BrandData;
-use Module\Vehicle\Vehicle;
-use Module\Vehicle\VehicleData;
+use Module\Vehicle\Model\Brand;
+use Module\Vehicle\Model\Vehicle;
 use function Hybridly\view;
 
 final class VehicleController

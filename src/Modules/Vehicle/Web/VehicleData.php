@@ -1,9 +1,12 @@
 <?php
 
-namespace Module\Vehicle;
+namespace Module\Vehicle\Web;
 
 use Module\Fuel\FuelTypeEnum;
+use Module\Vehicle\Model\Vehicle;
+use Module\Vehicle\VehicleTypeEnum;
 use Spatie\LaravelData\Data;
+use Spatie\TypeScriptTransformer\Attributes\RecordTypeScriptType;
 
 class VehicleData extends Data
 {
@@ -13,7 +16,7 @@ class VehicleData extends Data
         public readonly string $licence_plate,
         #[RecordTypeScriptType(FuelTypeEnum::class, 'string')]
         public readonly string $fuelType,
-        #[RecordTypeScriptType(VehicleType::class, 'string')]
+        #[RecordTypeScriptType(VehicleTypeEnum::class, 'string')]
         public readonly string $type,
         public readonly int $year,
         public readonly int $mileage,

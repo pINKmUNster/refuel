@@ -5,6 +5,7 @@ namespace Module\Fuel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Infrastructure\Support\RegistersModule;
+use Module\Fuel\Web\FuelPriceController;
 use Module\Vehicle\Web\VehicleController;
 
 final class FuelServiceProvider extends ServiceProvider
@@ -19,6 +20,6 @@ final class FuelServiceProvider extends ServiceProvider
 
     public function routes(Router $router): void
     {
-        $router->get('/vehicle', [VehicleController::class, 'index'])->name('index');
+        $router->get('/fuel-price', [FuelPriceController::class, 'index'])->name('index');
     }
 }

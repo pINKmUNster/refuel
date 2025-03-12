@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Module\User\User;
-use Module\Vehicle\Brand;
-use Module\Vehicle\Vehicle;
+use Module\Vehicle\Model\Brand;
+use Module\Vehicle\Model\Vehicle;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 

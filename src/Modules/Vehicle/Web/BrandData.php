@@ -1,7 +1,8 @@
 <?php
 
-namespace Module\Vehicle;
+namespace Module\Vehicle\Web;
 
+use Module\Vehicle\Model\Brand;
 use Spatie\LaravelData\Data;
 
 class BrandData extends Data

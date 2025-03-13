@@ -4,7 +4,6 @@ namespace Module\Fuel;
 
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
-#[TypeScript]
 enum FuelTypeEnum: string
 {
     case ELECTRIC = 'electric';

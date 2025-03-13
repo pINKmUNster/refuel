@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\Fuel\Jobs;
+namespace Module\Fuel\Models;
 
 use Symfony\Component\DomCrawler\Crawler;
 

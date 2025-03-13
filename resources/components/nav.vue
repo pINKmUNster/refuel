@@ -16,6 +16,12 @@
                 >Vehicles
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    :href="route('fuel.index')"
+                >Fuel Prices
+                </NavLink>
+            </li>
         </ul>
     </nav>
 </template>

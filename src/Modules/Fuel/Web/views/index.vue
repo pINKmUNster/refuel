@@ -5,6 +5,10 @@ const refresh = () => {
     router.post(myRoute);
 }
 
+const props = defineProps<{
+    fuelPrices: Paginator<Module.Fuel.Models.FuelPriceData>
+}>()
+
 
 </script>
 

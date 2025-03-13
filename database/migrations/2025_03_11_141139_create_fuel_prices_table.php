@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->decimal('price',8,3);
             $table->date('date');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

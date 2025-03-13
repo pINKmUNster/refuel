@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Module\Fuel\Factories\FuelPriceFactory;
 use Module\Fuel\FuelTypeEnum;
-use Module\Fuel\Jobs\FuelPriceRaw;
 
 class FuelPrice extends Model
 {

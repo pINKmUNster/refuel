@@ -8,6 +8,7 @@ use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Module\Fuel\Models\FuelPrice;
+use Module\Fuel\Models\FuelPriceRaw;
 use Symfony\Component\DomCrawler\Crawler;
 
 final class RefreshFuelPrice implements ShouldQueue

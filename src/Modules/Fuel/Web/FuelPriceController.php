@@ -3,7 +3,6 @@
 namespace Module\Fuel\Web;
 
 use Hybridly\Contracts\HybridResponse;
-use Illuminate\View\View;
 use Module\Fuel\Jobs\RefreshFuelPrice;
 use function Hybridly\view;
 

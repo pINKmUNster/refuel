@@ -19,7 +19,9 @@ final class RefreshFuelPrice implements ShouldQueue
         $fuelPricesRaws = $this->getContent();
         $tvaPrices = $this->onlyWithTva($fuelPricesRaws);
         $itemsToSave = $this->toFuelPrices($tvaPrices);
-        FuelPrice::create($itemsToSave);
+       foreach($itemsToSave as $item){
+              $item->save();
+       }
     }
 
     /**
@@ -40,7 +42,7 @@ final class RefreshFuelPrice implements ShouldQueue
     }
 
     /**
-     * @param  array  $fuelPricesRaws FuelPriceRaw[]
+     * @param  array  $fuelPricesRaws  FuelPriceRaw[]
      * @return array FuelPriceRaw[]
      */
     public function onlyWithTva(array $fuelPricesRaws): array
@@ -52,13 +54,16 @@ final class RefreshFuelPrice implements ShouldQueue
 
 
     /**
-     * @param  array  $tvaPrices FuelPriceRaw[]
+     * @param  array  $tvaPrices  FuelPriceRaw[]
      * @return array FuelPriceRaw[]
      */
-    private function toFuelPrices(array $tvaPrices) : array
+    private function toFuelPrices(array $tvaPrices): array
     {
-        return array_map(function ($fuelPriceRaw) {
-            return FuelPrice::fromRaw($fuelPriceRaw);
-        }, $tvaPrices);
+        $arr = [];
+        foreach ($tvaPrices as $tvaPrice) {
+            $items = FuelPrice::fromRaw($tvaPrice);
+            $arr= array_merge($arr, $items);
+        }
+        return $arr;
     }
 }

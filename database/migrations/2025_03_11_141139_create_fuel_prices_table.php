@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('fuel_prices', function (Blueprint $table) {
             $table->id();
             $table->string('fuel_type');
-            $table->decimal('price');
+            $table->decimal('price',8,3);
             $table->date('date');
             $table->timestamps();
         });

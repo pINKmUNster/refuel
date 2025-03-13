@@ -13,7 +13,7 @@ final class FuelPriceRaw
         public string $diesel,
         public string $tva,
     ) {
-
+        $this->date = \DateTime::createFromFormat('d/m/Y', $date)->format('Y-m-d');
     }
 
     public static function fromCell(Crawler $cell): FuelPriceRaw

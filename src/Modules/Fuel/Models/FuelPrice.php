@@ -26,19 +26,22 @@ class FuelPrice extends Model
      */
     public static function fromRaw(FuelPriceRaw $fuelPriceRaw): array
     {
-        $gasoline = new FuelPrice(
-            [
-                'fuel_type' => FuelTypeEnum::GASOLINE,
-                'price' => $fuelPriceRaw->gasoline98,
-                'date' => $fuelPriceRaw->date,
-            ]
-        );
+        $gasoline98 = new FuelPrice([
+            'fuel_type' => FuelTypeEnum::GASOLINE_98,
+            'price' => $fuelPriceRaw->gasoline98,
+            'date' => $fuelPriceRaw->date,
+        ]);
         $diesel = new FuelPrice([
             'fuel_type' => FuelTypeEnum::DIESEL,
             'price' => $fuelPriceRaw->diesel,
             'date' => $fuelPriceRaw->date,
         ]);
+        $gasoline95 = new FuelPrice([
+            'fuel_type' => FuelTypeEnum::GASOLINE_95,
+            'price' => $fuelPriceRaw->gasoline95,
+            'date' => $fuelPriceRaw->date,
+        ]);
 
-        return [$gasoline, $diesel];
+        return [$gasoline98, $gasoline95, $diesel];
     }
 }

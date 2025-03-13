@@ -7,6 +7,7 @@ use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
+use Module\Fuel\Models\FuelPrice;
 use Symfony\Component\DomCrawler\Crawler;
 
 final class RefreshFuelPrice implements ShouldQueue
@@ -17,7 +18,8 @@ final class RefreshFuelPrice implements ShouldQueue
     {
         $fuelPricesRaws = $this->getContent();
         $tvaPrices = $this->onlyWithTva($fuelPricesRaws);
-
+        $itemsToSave = $this->toFuelPrices($tvaPrices);
+        FuelPrice::create($itemsToSave);
     }
 
     /**
@@ -44,7 +46,19 @@ final class RefreshFuelPrice implements ShouldQueue
     public function onlyWithTva(array $fuelPricesRaws): array
     {
         return Arr::where($fuelPricesRaws, function ($fuelPricesRaw) {
-            return $$fuelPricesRaw->tva === "TVAC";
+            return $fuelPricesRaw->tva === "TVAC";
         });
+    }
+
+
+    /**
+     * @param  array  $tvaPrices FuelPriceRaw[]
+     * @return array FuelPriceRaw[]
+     */
+    private function toFuelPrices(array $tvaPrices) : array
+    {
+        return array_map(function ($fuelPriceRaw) {
+            return FuelPrice::fromRaw($fuelPriceRaw);
+        }, $tvaPrices);
     }
 }

@@ -1,4 +1,5 @@
-﻿services:
+﻿name: refuel
+services:
     postgres:
         image: postgres:latest
         container_name: postgres

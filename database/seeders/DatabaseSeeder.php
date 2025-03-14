@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Module\User\User;
 use Module\Vehicle\Model\Brand;
 use Module\Vehicle\Model\Vehicle;
+use Module\Vehicle_Notes\Models\VehicleNotes;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -29,7 +30,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Brand::factory()
-            ->has(Vehicle::factory()->count(2)->sequence(
+            ->has(
+                Vehicle::factory()
+                    ->count(2)->sequence(
                 ['user_id' => $user1],['user_id' => $user2]))
             ->count(2)
             ->sequence(['label' => 'BMW',], ['label' => 'Audi',])

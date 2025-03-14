@@ -1,5 +1,6 @@
 declare namespace Module.Fuel.Models {
 export type FuelPriceData = {
+id: number;
 fuel_type: any;
 price: string;
 date: string;

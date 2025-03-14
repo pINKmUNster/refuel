@@ -7,7 +7,7 @@
 		declare module 'hybridly' {
 			export interface GlobalRouteCollection {
 				url: 'https://refuel.test'
-				routes: {"hybridly.action.invoke":{"uri":"invoke","wheres":[],"bindings":{}},"homepage.index":{"wheres":[],"bindings":{}},"vehicle.index":{"uri":"vehicle","wheres":[],"bindings":{}},"vehicle.store":{"uri":"vehicle","wheres":[],"bindings":{}},"vehicle.create":{"uri":"vehicle/create","wheres":[],"bindings":{}},"vehicle.show":{"uri":"vehicle/{id}","wheres":[],"bindings":{}},"vehicle.destroy":{"uri":"vehicle/{id}","wheres":[],"bindings":{}},"fuel.index":{"uri":"fuel-price","wheres":[],"bindings":{}},"fuel.refresh":{"uri":"refresh-fuel-price","wheres":[],"bindings":{}}}
+				routes: {"hybridly.action.invoke":{"uri":"invoke","wheres":[],"bindings":{}},"homepage.index":{"wheres":[],"bindings":{}},"vehicle.index":{"uri":"vehicle","wheres":[],"bindings":{}},"vehicle.store":{"uri":"vehicle","wheres":[],"bindings":{}},"vehicle.create":{"uri":"vehicle/create","wheres":[],"bindings":{}},"vehicle.show":{"uri":"vehicle/{id}","wheres":[],"bindings":{}},"vehicle.destroy":{"uri":"vehicle/{id}","wheres":[],"bindings":{}},"fuel.index":{"uri":"fuel-price","wheres":[],"bindings":{}},"fuel.refresh":{"uri":"refresh-fuel-price","wheres":[],"bindings":{}},"fuel.charts":{"uri":"charts","wheres":[],"bindings":{}}}
 			}
 		}
 		

@@ -14,6 +14,11 @@ class FuelPrice extends Model
 
     protected $fillable = ['fuel_type', 'price', 'date'];
 
+    protected $casts = [
+        'date' => 'date',
+        'fuel_type' => FuelTypeEnum::class,
+    ];
+
     protected static function newFactory(): FuelPriceFactory
     {
         return FuelPriceFactory::new();

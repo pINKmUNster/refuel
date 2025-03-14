@@ -9,6 +9,7 @@
           "vehicle::create",
           "vehicle::index",
           "vehicle::show",
+          "fuel::charts",
           "fuel::index"
         ]
       },

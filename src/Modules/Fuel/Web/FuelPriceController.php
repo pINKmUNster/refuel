@@ -13,12 +13,17 @@ final class FuelPriceController
     public function index(): HybridResponse
     {
         $fuelPrices = FuelPrice::query()
-            ->paginate();
+            ->paginate(25);
 
-
-        return hybridly('fuel::index',['fuelPrices' =>
-            FuelPriceData::collect($fuelPrices,PaginatedDataCollection::class)->transform()
+        return hybridly('fuel::index', [
+            'fuelPrices' =>
+                FuelPriceData::collect($fuelPrices, PaginatedDataCollection::class)->transform()
         ]);
+    }
+
+    public function charts(): HybridResponse
+    {
+        return hybridly('fuel::charts');
     }
 
     public function refresh(): \Illuminate\Http\RedirectResponse

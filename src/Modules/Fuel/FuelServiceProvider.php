@@ -22,5 +22,6 @@ final class FuelServiceProvider extends ServiceProvider
     {
         $router->get('/fuel-price', [FuelPriceController::class, 'index'])->name('index');
         $router->post('/refresh-fuel-price', [FuelPriceController::class, 'refresh'])->name('refresh');
+        $router->get('/charts', [FuelPriceController::class, 'charts'])->name('charts');
     }
 }

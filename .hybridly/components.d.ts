@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    IHeroiconsSolidChevronLeft: typeof import('~icons/heroicons-solid/chevron-left')['default']
+    IHeroiconsSolidChevronRight: typeof import('~icons/heroicons-solid/chevron-right')['default']
     MyDialog: typeof import('./../resources/components/my-dialog.vue')['default']
     MyRadio: typeof import('./../resources/components/my-radio.vue')['default']
     MySelect: typeof import('./../resources/components/my-select.vue')['default']

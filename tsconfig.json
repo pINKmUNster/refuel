@@ -1,3 +1,6 @@
 {
     "extends": "./.hybridly/tsconfig.json",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports" : true,
+    }
 }
